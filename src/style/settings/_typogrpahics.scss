@@ -1,0 +1,110 @@
+body {
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 300;
+  font-family: $main-font, Arial, Helvetica, sans-serif;
+  color: var(--primary-text-color);
+  background-color: var(--primary-bg-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+b,
+strong {
+  font-weight: 700;
+}
+
+
+.is-accent {
+  color: var(--primary-accent);
+}
+
+.text-h1 {
+  @include set-font(40px, 1, 700);
+
+  letter-spacing: -2px;
+}
+
+.text-h2 {
+  @include set-font(40px, 1, 300);
+
+  letter-spacing: 1px;
+}
+
+.text-t1 {
+  @include set-font(30px, 1, 300);
+
+  letter-spacing: 1px;
+}
+
+.text-t2 {
+  @include set-font(15px, 1.2, 700);
+
+  text-transform: uppercase;
+}
+
+.text-t4 {
+  @include set-font(12px, 1.4, 300);
+
+  letter-spacing: 1px;
+}
+
+.text-b1 {
+  @include set-font(20px, 1.2, 700);
+
+  letter-spacing: -1px;
+}
+
+@include media-min ($md) {
+  .text-h1 {
+    --text-fz: 60px;
+  }
+
+  .text-h2 {
+    --text-fz: 60px;
+  }
+
+  .text-t1 {
+    --text-fz: 45px;
+  }
+
+  .text-t2 {
+    --text-fz: 20px;
+  }
+
+  .text-b1 {
+    --text-fz: 25px;
+  }
+}
+
+@include media-min ($lg) {
+  body {
+    font-size: 20px;
+  }
+
+  .text-t4 {
+    --text-fz: 14px;
+  }
+}
+
+@include media-min ($xl) {
+  .text-h1 {
+    --text-fz: 80px;
+  }
+
+  .text-h2 {
+    --text-fz: 80px;
+  }
+
+  .text-t1 {
+    --text-fz: 60px;
+  }
+
+  .text-t2 {
+    --text-fz: 25px;
+  }
+}

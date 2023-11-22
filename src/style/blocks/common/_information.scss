@@ -1,0 +1,56 @@
+.information {
+  color: var(--secondary-text-color);
+  background-color: var(--secondary-bg-color);
+
+  &__item {
+    position: relative;
+
+    &:not(:first-of-type) {
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--secondary-text-color);
+        opacity: 0.3;
+      }
+    }
+  }
+
+  @include media-min ($md) {
+    display: flex;
+    background-image: url('../img/info-cover.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &__item {
+      flex-basis: 100%;
+
+      &:not(:first-of-type) {
+        &::before {
+          width: 1px;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  @include media-min ($lg) {
+    height: 100%;
+    background-position: var(--cover-position, left center);
+    transition: background-position .3s ease-in-out, box-shadow .3s ease-in-out;
+
+    &--aside {
+      &.is-hovered {
+        box-shadow: -200px 0 100px 0 rgba(255, 255, 255, 0.60);
+      }
+    }
+
+    &__item {
+      flex-basis: auto;
+    }
+  }
+}

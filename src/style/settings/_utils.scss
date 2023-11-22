@@ -1,0 +1,48 @@
+.visually-hidden:not(:focus):not(:active),
+input[type="radio"].visually-hidden,
+input[type="checkbox"].visually-hidden {
+  @include visually-hidden;
+}
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.indent-reset {
+  @include indent-reset;
+}
+
+.list-reset {
+  @include list-reset;
+}
+
+.btn-reset {
+  @include btn-reset;
+}
+
+.custom-scroll {
+  @include custom-scroll;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-offset-left, var(--side-offset, 15px));
+  padding-right: var(--side-offset-right, var(--side-offset, 15px));
+
+  @include media-min ($md) {
+    padding-left: var(--side-offset-left, var(--side-offset, 30px));
+    padding-right: var(--side-offset-right, var(--side-offset, 30px));
+  }
+
+  @include media-min ($lg) {
+    padding-left: var(--side-offset-left, var(--side-offset, 50px));
+    padding-right: var(--side-offset-right, var(--side-offset, 50px));
+  }
+
+  @include media-min ($xl) {
+    padding-left: var(--side-offset-left, var(--side-offset, 100px));
+    padding-right: var(--side-offset-right, var(--side-offset, 100px));
+  }
+}
