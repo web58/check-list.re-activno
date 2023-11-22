@@ -2,7 +2,7 @@ import gulp from 'gulp';
 import notify from 'gulp-notify';
 import gulpIf from 'gulp-if';
 import fileInclude from 'gulp-file-include';
-import beautifyHTML from 'gulp-html-beautify';
+import minifyHTML from 'gulp-htmlmin';
 
 const {
   src,
@@ -14,8 +14,8 @@ const compileHTML = () => {
       prefix: '@',
       basepath: '@file'
     } ).on( 'error', notify.onError() ) )
-    .pipe( gulpIf( process.env.NODE_ENV === 'production', beautifyHTML( {
-      'indent_size': 2
+    .pipe( gulpIf( process.env.NODE_ENV === 'production', minifyHTML( {
+      collapseWhitespace: true
     } ) ) )
     .pipe( dest( './build/' ) );
 };
