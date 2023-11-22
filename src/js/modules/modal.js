@@ -21,8 +21,15 @@ const initModal = () => {
     modalNode.classList.add( 'modal--open' );
   }
 
+  function onModalClick( evt ) {
+    if ( evt.target.classList.contains( 'modal--open' ) ) {
+      closeModal();
+    }
+  }
+
   modalTriggerNode.addEventListener( 'click', openModal );
   modalCloseNode.addEventListener( 'click', closeModal );
+  modalNode.addEventListener( 'click', onModalClick );
   document.addEventListener( 'keydown', onEscKeydown );
 };
 
